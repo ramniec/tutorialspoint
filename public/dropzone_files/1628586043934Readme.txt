@@ -1,5 +1,0 @@
-Author: Yogesh singh
-Author URL: https://makitweb.com/
-Author Email: makitweb@gmail.com
-Tutorial Link: https://makitweb.com/delete-the-uploaded-file-from-dropzone-js-php/
-
