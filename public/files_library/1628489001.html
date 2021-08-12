@@ -1,0 +1,604 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Claremont Executive Chauffeurs</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="shortcut icon" href="images/facecon.png" />
+<link href="css/style.css" rel="stylesheet" type="text/css">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700,600italic,600,400italic,300italic,300,800italic,800,700italic' rel='stylesheet' type='text/css'>
+
+<link rel="stylesheet" href="responsive/responsive-nav.css">
+<link rel="stylesheet" href="responsive/styles.css">
+<script src="responsive/responsive-nav.js"></script>
+<link href="css/responsive.css" rel="stylesheet" type="text/css">
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-143796026-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-143796026-1');
+</script>
+
+<meta name="google-site-verification" content="mhPz38p860tghtxCDDnY79XKdWa7mP064tDIJopCRdY" />
+
+</head>
+
+<body>
+<div class="main_wraper">
+<div class="container_main">
+<div class="top_part">
+<div class="logo_main">
+<div class="logo"><a href="http://www.claremontexecutive.co.uk/"><img src="images/logo.jpg" alt="Claremont Executive"></a></div>
+<div class="logo1"><img src="images/logo1.jpg" alt="Claremont Executive"></div>
+<div class="cls"></div>
+</div>
+<div class="top_navi">
+<ul>
+<li><a href="contactus.html">Contact us</a></li>
+<li><a href="history.html">Claremont History</a></li>
+<li><a href="terms.html">Terms</a></li>
+<li><a href="client-login.html">Client Login</a></li>
+</ul>
+</div>
+<div class="top_rgt">
+<div class="top_btn">
+<div class="gray_btn"><a href="reservations.html">Reservations</a></div>
+<div class="cyn_btn"><a href="quick-quote.html">Quick Quote</a></div>
+<div class="cls"></div>
+</div>
+<div class="email_main">
+<div class="phone">
+  <div class="ph_icon"><img src="images/phone.jpg" width="27" height="27" alt=""></div>020 7261 0222</div>
+<div class="cls"></div>
+
+</div>
+
+</div>
+<div class="cls"></div>
+</div>
+</div>
+
+<div class="navi_main">
+<div class="container_main">
+<div class="navi">
+ <nav class="nav-collapse">
+<ul class="main">
+<li><a href="http://www.claremontexecutive.co.uk/">Homepage</a></li>
+<li><a href="corporate-chauffeur.html">Corporate</a></li>
+<li><a href="airport-travel.html">Airport Travel</a></li>
+<li><a href="events.html">Events</a></li>
+<li><a href="tour.html">Tours</a></li>
+<li><a href="wedding.html">Weddings</a></li>
+<li><a href="fleet-tariff.html">Fleet & Tariff</a></li>
+<li><a href="news.html">News</a></li>
+</ul>
+</nav>
+<div class="cls"></div>
+</div>
+</div>
+</div>
+<div class="main_banner">
+<div class="banner">
+<img src="images/contact-banner.jpg" title="#htmlcaption1"/>
+</div>
+</div>
+<div class="container_main">
+<div class="middle_part">
+<div class="lr_rpt">
+<div class="left_part">
+<div class="blackh">Thank <span>you</span></div>
+
+<div class="cbt_txt">
+</div>
+<div class="cls"></div>
+<div class="tarrif_main">
+<? extract($_REQUEST);
+
+$to = 'bookings@claremontexecutive.co.uk';
+
+
+if($act == 'acc' && $email!='' && $phone!=''){
+	
+$subject="Corporate Account details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p><b>Company details : </b></p>
+<p>Company : ".$cname."</p>
+<p>Registerd Address : ".$raddress."</p>
+<p>Email : ".$email."</p>
+<p>Registerd Number : ".$rphone."</p>
+<p>Contact Name : ".$contact_name."</p>
+<p>Positions : ".$positions."</p>
+<p>Phone : ".$phone."</p>
+<p>Fax Number : ".$fax."</p>
+<p>VAT Number : ".$vat."</p>
+<p><b>Account details : </b></p>
+<p>Account Contact : ".$acontact."</p>
+<p>Billing Address : ".$baddress."</p>
+<p>Phone : ".$aphone."</p>
+<p>Email : ".$aemail."</p>
+<p>Fax Number : ".$afax."</p>
+<p><b>Persons authorised to make bookings : </b></p>
+<p>Account Contact 1 : ".$contact1."</p>
+<p>Email 1 : ".$email1."</p>
+<p>Phone 1 : ".$phone1."</p>
+<p>Fax Number 1 : ".$fax1."</p>
+<p>Account Contact 2 : ".$contact2."</p>
+<p>Email 2 : ".$email2."</p>
+<p>Phone 2 : ".$phone1."</p>
+<p>Fax Number 2 : ".$fax2."</p>
+<p>Account Contact 3 : ".$contact3."</p>
+<p>Email 3 : ".$email3."</p>
+<p>Phone 3 : ".$phone3."</p>
+<p>Fax Number 3 : ".$fax3."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die('mail sending error');
+
+echo $msg = 'Your Corporate Account details submitted successfully, we`ll contact you soon.';
+}
+
+if($act == 'car' && $email!='' && $phone!=''){
+	
+$subject = $sub." Wedding Chauffeur details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Passenger Name : ".$pname."</p>
+<p>Company : ".$cname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Date : ".$date."</p>
+<p>Collection Address : ".$caddress."</p>
+<p>Destination Address : ".$daddress."</p>
+<p>Additional Info : ".$info."</p>
+<p>Vehicle : Vehicle Choice : ".$sub."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die('mail sending error');
+
+echo $msg = 'Your '.$sub.' details submitted successfully, we`ll contact you soon.';
+}
+
+
+if($act == 'wedding' && $email!='' && $phone!=''){
+	
+$subject="Wedding Chauffeur details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Passenger Name : ".$pname."</p>
+<p>Company : ".$cname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Date : ".$date."</p>
+<p>Collection Address : ".$caddress."</p>
+<p>Destination Address : ".$daddress."</p>
+<p>Vehicle : Vehicle Choice : ".@implode(', ',$vtype)."</p>
+<p>Additional Info : ".$info."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die('mail sending error');
+
+echo $msg = 'Your Wedding Chauffeur details submitted successfully, we`ll contact you soon.';
+}
+
+if($act == 'event' && $email!='' && $phone!=''){
+	
+$subject=$sub." details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Passenger Name : ".$pname."</p>
+<p>Company : ".$cname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Date : ".$date."</p>
+<p>Collection Address : ".$caddress."</p>
+<p>Destination Address : ".$daddress."</p>
+<p>Vehicle : Vehicle Choice : ".$vtype."</p>
+<p>Additional Info : ".$info."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die('mail sending error');
+
+echo $msg = 'Your '.$sub.' details submitted successfully, we`ll contact you soon.';
+}
+
+if($act == 'airport' && $email!='' && $phone!=''){
+	
+$subject=$sub." details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Passenger Name : ".$pname."</p>
+<p>Company : ".$cname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Date : ".$date."</p>
+<p>Collection Address : ".$caddress."</p>
+<p>Destination Address : ".$daddress."</p>
+<p>Flight Number : ".$flight."</p>
+<p>Vehicle : Vehicle Choice : ".$vtype."</p>
+<p>Additional Info : ".$info."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die('mail sending error');
+
+echo $msg = 'Your '.$sub.' details submitted successfully, we`ll contact you soon.';
+}
+
+if($act == 'contact' && $email!='' && $phone!=''){
+	
+$subject="Contact details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Name : ".$Yname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Subject : ".$subject."</p>
+<p>Message : ".$message."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+$ok = mail($to, $subject, $message, $headers);
+if($ok) {
+	echo $msg = 'Your contact details submitted successfully, we`ll contact you soon.';
+	}
+}
+
+if($act == 'CT' && $email!='' && $phone!=''){
+	
+$subject=$sub." details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Passenger Name : ".$pname."</p>
+<p>Company : ".$cname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Date : ".$date."</p>
+<p>Collection Address : ".$caddress."</p>
+<p>Destination Address : ".$daddress."</p>
+<p>Flight Number : ".$flight."</p>
+<p>Vehicle : Vehicle Choice : ".@implode(', ',$vtype)."</p>
+<p>Additional Info : ".$info."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die('mail sending error');
+
+echo $msg = 'Your '.$sub.' details submitted successfully, we`ll contact you soon.';
+}
+
+if($act == 'BT' && $email!='' && $phone!=''){
+	
+$subject="Reservation details from Claremont";
+
+$message = "
+<div class='common_cont'>
+<div class='tb_border'>
+<div class='common_cont'>
+<p>Client Name : ".$name."</p>
+<p>Company : ".$cname."</p>
+<p>Email : ".$email."</p>
+<p>Phone : ".$phone."</p>
+<p>Fax Number : ".$fax."</p>
+<p>Passenger Name : ".$pname."</p>
+<p>Contact Number : ".$contact."</p>
+<p>Collection Address : ".$caddress."</p>
+<p>Destination Address : ".$daddress."</p>
+<p>Reservation Date : ".$date."</p>
+<p>Reservation Time : ".$time."</p>
+<p>No. of Passengers : ".$passenger."</p>
+<p>Luggage : ".$luggage."</p>
+<p>Airport & Terminal : ".$airport."</p>
+<p>Flight Number : ".$flight."</p>
+<p>Vehicle : Vehicle Choice : ".@implode(', ',$vtype)."</p>
+<p>Special Requests : ".$requests."</p>
+<p>How did you hear about us? : ".$hear."</p>
+<p>Other, Please specify : ".$other."</p>
+<p>Would you like a brochure? : ".$brochure."</p>
+</div>
+</div>
+</div>";
+
+$headers  = 'From: ' .$email. "\r\n";
+
+$headers .= 'MIME-Version: 1.0' . "\r\n";
+
+$headers .= 'Content-type: text/html; charset=UTF-8' . "\r\n";
+
+$headers .= 'To: Claremont <claremontexecutive.com>' . "\r\n";
+
+mail($to, $subject, $message, $headers) or die();
+
+echo $msg = 'Your reservation details submitted successfully, we`ll contact you soon.';
+}
+?>
+<div class="cls"></div>
+</div>
+</div>
+<div class="right_part">
+<div class="right_img"><img src="images/cpr-right1.jpg" alt=""></div>
+<div class="right_img"><img src="images/cpr-right2.jpg" alt=""></div>
+
+</div>
+
+
+<div class="cls"></div>
+</div>
+
+<div class="blue_strip"><P>The Claremont Fleet</P></div>
+
+<div class="car_main">
+        <div class="car1">
+          <div class="car1_img"><img src="images/car1.jpg" alt="Mercedes S Class executive business travel"></div>
+          <div class="car1_text"><a href="http://www.claremontexecutive.co.uk/s-class.html" class="style1">Mercedes S Class</a></div>
+          <div class="car_btn"><a href="s-class.html">View</a></div>
+        </div>
+        <div class="car1">
+          <div class="car1_img"><img src="images/car6.jpg" alt="jaguar wedding chauffeur cars"></div>
+          <div class="car1_text"><a href="http://www.claremontexecutive.co.uk/jaguar.html" class="style1">Jaguar XJL</a></div>
+          <div class="car_btn"><a href="jaguar.html">View</a></div>
+        </div>
+        <div class="car1">
+          <div class="car1_img"><img src="images/car2.jpg" alt="Rolls Royce Phantom chauffeur car"></div>
+          <div class="car1_text"><a href="http://www.claremontexecutive.co.uk/rolls-royce.html" class="style1">Rolls-Royce Phantom</a></div>
+          <div class="car_btn"><a href="rolls-royce.html">View</a></div>
+        </div>
+        <div class="car1">
+          <div class="car1_img"><img src="images/car3.jpg" alt="Bentley Mulsanne chauffeur car"></div>
+          <div class="car1_text"><a href="http://www.claremontexecutive.co.uk/bentley.html" class="style1">Bentley Mulsanne</a></div>
+          <div class="car_btn"><a href="bentley.html">View</a></div>
+        </div>
+        <div class="car1">
+          <div class="car1_img"><img src="images/car4.jpg" alt="Mercedes E Class chauffeur car"></div>
+          <div class="car1_text"><a href="http://www.claremontexecutive.co.uk/e-class.html" class="style1">Mercedes E Class</a></div>
+          <div class="car_btn"><a href="e-class.html">View</a></div>
+        </div>
+        <div class="car1">
+          <div class="car1_img"><img src="images/car5.jpg" alt="Mercedes Viano chauffeur driven cars in London"></div>
+          <div class="car1_text"><a href="http://www.claremontexecutive.co.uk/vino.html" class="style1">Mercedes Viano</a></div>
+          <div class="car_btn"><a href="vino.html">View</a></div>
+
+</div>
+
+
+</div>
+<div class="bax_main">
+<div class="b_box1 b_color1">
+<div class="box_text">
+<p>
+<span>Claremont</span>
+<b>Corporate Chauffeur Services</b><br>
+Since 1974, serving London<br>
+with a professional Chauffeur Service</p>
+</div>
+</div>
+
+<div class="b_box1 b_color2">
+<div class="box_text">
+<p>
+<span>Claremont</span>
+<b>Diplomatic Chauffeur Services</b><br>
+<label>We are first choice for providing professional chauffeurs to take care of diplomats and VIP's.</label></p>
+</div>
+</div>
+
+<div class="b_box1 b_color3">
+<div class="box_text1">
+<p>
+<span>Claremont</span>
+<label>Hotel Chauffeur Services</label><br>
+We are a the offical Chauffeur company to 5 star hotels in London</p>
+</div>
+</div>
+
+<div class="b_box2 b_color4">
+<div class="box_text">
+<p>
+<span>Claremont</span>
+<b>Events Chauffeur Services</b><br>
+
+<label>Add a little zing to your event by arriving at the venue in our top of the line Chaufffeur cars</label></p>
+</div>
+</div>
+
+
+
+
+
+</div>
+<div class="bottom">
+<div class="bottom_link">
+<span>Corporate </span>
+<ul>
+<li><a href="business-travel.html">Business Travel</a></li>
+<li><a href="financial-roadshow.html">Financial Roadshow</a></li>
+<li><a href="">Executive Cars </a></li>
+<li><a href="">London Chauffeur</a></li>
+<li><a href="corporate-account.html">Corporate Accounts</a></li>
+<li><a href="business-chauffeur.html">Business Chauffeur</a></li>
+<li><a href="http://www.claremontexecutive.co.uk/luxury-chauffeur.html">Luxury Chauffeur</a></li>
+<li><a href="http://www.claremontexecutive.co.uk/chauffeur-hire-london.html">Chauffeur Hire Service</a></li>
+</ul>
+</div>
+<div class="bottom_link">
+<span>Airport Travel</span>
+<ul>
+<li><a href="airport-transfers.html">Airport Transfers</a></li>
+<li><a href="claremont-private-jet.html">Private Jet chauffeur</a></li>
+<li><a href="meet-greet.html">Airport meet & greet</a></li>
+<li><a href="flight-monitoring.html">Flight Monitoring</a></li>
+<li><a href="heathrow-airport.html">Heathrow Chauffeur</a></li>
+</ul>
+</div>
+<div class="bottom_link">
+<span>Airport Chauffeur </span>
+<ul>
+            <li><a href="heathrow-airport.html">Heathrow Executive Cars</a></li>
+            <li><a href="getwick-airport.html">Gatwick Chauffeur</a></li>
+            <li><a href="luton-airport.html">Luton Chauffueur </a></li>
+            <li><a href="stansted-airport.html">Stansted Airport</a></li>
+            <li><a href="farnbourgh-airport.html">Farnbourgh Chauffeur</a></li>
+            <li><a href="biggin-hill-airport.html">Biggin Hill Airport</a></li>
+          </ul>
+</div>
+<div class="bottom_link">
+<span>Chuauffeur Cars</span>
+<ul>
+<li><a href="bentley.html">Bentley Chauffeur </a></li>
+<li><a href="s-class.html">Mercedes S Class</a></li>
+<li><a href="jaguar.html">Jaguar XJL Cars</a></li>
+<li><a href="e-class.html">Mercedes E Class</a></li>
+<li><a href="vino.html">Mercedes Viano</a></li>
+<li><a href="rolls-royce.html">Rolls Royce Chauffeur</a></li>
+</ul>
+</div>
+<div class="bottom_link">
+<span>Events</span>
+<ul>
+<li><a href="corporate-events.html">Corporate Events</a></li>
+<li><a href="sporting-event.html">Sports Events</a></li>
+<li><a href="#">VIP Events</a></li>
+<li><a href="#">Personal Chauffeur</a></li>
+<li><a href="wedding.html">Weddings</a></li>
+</ul>
+</div>
+<div class="bottom_link">
+<span>Film and Media</span>
+<ul>
+<li><a href="celebrity-chauffeur.html">Celebrity Chuaffuer</a></li>
+<li><a href="">Media Chauffeur</a></li>
+<li><a href="film-premieres.html">Film Premiers</a></li>
+<li><a href="#">Private Chauffeur</a></li>
+</ul>
+</div>
+<div class="bottom_link1">
+<span>About us </span>
+<ul>
+<li><a href="history.html">History</a></li>
+<li><a href="news.html">News</a></li>
+<li><a href="terms.html">Terms & conditions</a></li>
+<li><a href="#">Eco Chauffeur</a></li>
+</ul>
+</div>
+
+
+
+
+
+
+<div class="cls"></div>
+</div>
+<div class="bottom1">
+<div class="b_social">
+<div class="b_icn"><a href="#"><img src="images/s1.jpg" width="27" height="27" alt="Claremont Executive facebook "></a></div>
+<div class="b_icn"><a href="https://twitter.com/claremontexec"><img src="images/s2.jpg" width="27" height="27" alt="Claremont Executive twitter"></a></div>
+<div class="b_icn"><a href="#"><img src="images/s3.jpg" width="27" height="27" alt=""></a></div>
+<div class="b_icn"><a href="https://www.linkedin.com/company/claremont-executive-chauffeur-services-ltd/"><img src="images/s4.jpg" width="27" height="27" alt=""></a></div>
+<div class="cls"></div>
+</div>
+<div class="card"><a href="#"><img src="images/card.png" alt="Card"></a> <img src="images/pco.jpg" alt="PCO Card"></div>
+<div class="cls"></div>
+</div>
+
+
+</div>
+</div>
+
+</div>
+<script>
+      var navigation = responsiveNav(".nav-collapse");
+    </script>
+</body>
+</html>

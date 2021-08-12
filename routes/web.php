@@ -1,6 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\MultiUploaderController;
+use App\Http\Controllers\SocialShareController;
+use App\Http\Controllers\DropzoneController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +19,15 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+
+Route::get('/dropzone', [DropzoneController::class, 'index']);
+Route::post('dropzone/store', [DropzoneController::class, 'store']);
+Route::post('dropzone_delete', [DropzoneController::class, 'destroy']);
+
+Route::resource('/uploader', MultiUploaderController::class);
+Route::delete('uploader_delete/{id}', [MultiUploaderController::class, 'destroy']);
+Route::post('/uploader_submit', [MultiUploaderController::class, 'MoveToServer']);
+
+
+Route::resource('share', SocialShareController::class);
